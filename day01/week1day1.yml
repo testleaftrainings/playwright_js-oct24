@@ -1,0 +1,90 @@
+Agenda (19th/oct/2024-Saturday)
+----------------------------
+9.00AM  to 9.30AM   -Welcome and Kick Off
+9.30AM to 10.30AM   -JS Introduction
+10.30AM to 10.45AM   -Break
+10.45AM to 11.30AM   -Primitive Datatype and variables
+11.30AM to 11.45AM   -Breakout
+11.45AM to 12.30PM   -let vs var vs const
+12.30PM to 12.50PM   -Operators & conditional statement
+12.50PM to 1.00PM    -Wrap up 
+
+
+Javascript 
+-----------
+Livescript
+ Programming language -->webDevelopment
+ Front end development -->HTML/CSS
+ Backend development
+
+ ECMA-->2024
+ ES16,
+
+ client side validation 
+ server side validation
+ Event driven concept
+
+
+js engine --->run the code
+chrome -v8 engine 
+
+ node.js -->runtime environment 
+ js is faster 
+
+ Varaibles--> containter -->store 
+  store data/information in a varibale
+variable =value
+var username ="demo"
+
+primitive 
+
+string
+number
+boolean
+undefined
+null
+bigint 1238494087900444n
+symbol
+
+
+var -->declaring the varible with value
+
+var variableName =value 
+not recommended  -->allows to use the duplicated varible 
+ 
+ let -->keyword  -->doesnot allow duplicated varibales
+
+var  vs  let (difference)
+
+var -->can be redeclared and can be reassigned
+
+let -->cannot be redeclared
+    -->but can be reassigned
+
+scoping  -->where to access it 
+var -->global scoping/function scoping
+let -->block -scoping (local variable)
+ 
+-Operators
+comparision
+  ==
+  !=
+  >=
+  <=
+
+  to debug
+
+  add breakpoints -->near line number
+  goto sidebar(menu)-->runa nd debug
+  click RunandDebug
+
+  hoisting -->declaration moves top and then assignments happens
+
+
+  var -->redeclared and reassigned
+      -->global and function scoping
+      -->hoisting can access the value before initialization
+  
+  let -->reassigned and cannot be redeclared
+       -->block scoping
+       -->hoisting -->at declartion but throws reference error -->cannot taccess the variable before initialization
