@@ -1,0 +1,122 @@
+Agenda(20th/oct/2024-Sunday)
+--------
+9.00AM  to 9.40AM   -Conditional Statements
+9.40AM  to 10.00AM  -Breakout
+10.00AM to 10.40AM  -Loop Statements
+10.40AM to 11.00AM  -Breakout
+11.00AM to 11.15AM  -Break
+11.15AM to 12.00AM  -String
+12.00AM to 12.20PM  -Breakout
+12.15PM to 01.00PM  -Function types /Array
+01.00PM to 01.10PM  -Wrap &Assignments
+
+
+
+conditional Statements
+if else  -> logical operators, comparison
+
+age =18 || >18
+
+switchcase -->validate the input with different combination
+
+img,csv,excel.pdf
+
+switch(filetype)
+
+
+operators
+
+Arithmetic ->  +,-,/,*, %(modulus)
+/ --->answer as quotient -->4/2  -->2
+% -->remainder
+
+comparision  -->boolean value -->true/false
+== --> rhs ==lhs
+>=
+<=
+>
+<
+!=
+===  -->strict equality
+
+
+increment and decrement
+++ --
+i++ ->post increment --> i=i+1
+i-- -->post decrement -->i=i-1
+++i -->preincrement --> i+1 =i
+--i-->pre decrement
+
+
+logical operators
+&& -->both rhs and lhs should be true
+
+21
+
+if(age==18 && age>20{
+}
+else{
+}
+
+or operator
+if(age==18 || age>20{
+}
+else{
+}
+
+age!=18 && age>18
+
+
+Loop statement
+
+
+customer info (excel,csv) 10
+form data -->customer 
+
+loop(run for 10 ){
+fillData(){
+    name =""
+    phno =
+    address =""
+}
+}
+
+
+for loop -->10 data to filled -->known set of data
+while loop -->pagination //unknown range of data
+next.isvisible(){
+}
+
+fillData(){
+    name =""
+    phno =
+    address =""
+}
+
+
+fillData(){
+    name =""
+    phno =
+    address =""
+}
+
+
+fillData(){
+    name =""
+    phno =
+    address =""
+}
+
+String ->collection of character /sequence of character
+$299
+299 number 
+
+literal type -->directly   primitive type
+var /let username="" /' '
+
+object type
+new -->create memory in heap memory
+
+length 
+chara
+
