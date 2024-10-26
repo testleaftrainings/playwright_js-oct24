@@ -1,0 +1,109 @@
+Agenda(26th/oct/2024-Saturday)
+------------------------------
+9.00AM to 9.30AM   -Function types 
+9.30AM to 10.00AM  -Callback Function
+10.00AM to 11.00AM -Promise,Async and Await
+11.00Am to 11.15AM -Classroom
+11.15AM to 11.30AM -Break
+11.30AM to 12.40AM -Array
+12.40PM to 1.00PM  -Classroom
+
+
+Function -->block of code /business logic -->reusable code
+
+syntax:
+
+function functionName(inputarguments){
+  return stmt
+}
+
+Function types:
+------------------
+
+1.Named Function/Function declaration
+        
+        -supports hoisting
+
+function functionName(inputarguments){
+  return stmt
+}
+
+2.Function Expression:
+     -cannot be hoisted
+let funVar=function fnName(){return}
+funVar()
+
+3.Anonymous function-Function with no name
+    -single usage
+let funVar=function (){retun}
+Example from pw
+test(``,async ())
+
+4.Arrow function:
+ write the function concise way-->shorthand function
+
+let funVariable= ()=>return
+fat arrow
+
+function (a,b){ console.log(a +"" +b)
+           return a+b
+           }
+let sum=(a,b)=>{
+      a+b
+  }
+let sum(2,3)
+
+example in Pw
+test(``,async ()=>{
+})
+
+Higher order function
+
+callback  -->calling a function as an argument to the another function
+Promises
+
+function ( function() ){   
+}
+
+
+To resolve the callback hell -->Promise
+
+
+new Promise((resolve,reject)=>{
+
+})
+
+//state of promise 
+
+pending state
+fullfilled
+reject
+
+web app beheviour -->asynchronous
+async-->sync-->async and await keyword -->resolve reject arguments based on the status of the response
+
+    async function fnName(){
+          await applodawithurl()
+          awit appwithuser()
+          await paass() 
+    }
+
+
+    Array --> collection of data 
+         -->same type of data
+
+         -assigning multiple values to a single Variable
+         -dynamic in size
+         -all types of  data -->string,number,boolean
+           (hetrogenous)
+ let arr=["vidya",89368493002,true]
+
+array.filter()
+filter: Used to remove elements based on a condition. 
+It doesn't change the original elements, only filters them.
+
+array.map()
+map: Used to transform elements.
+ It applies a function to each element and returns a new array with the transformed elements.
+
+splice :to change the contents of an array by removing, replacing, or adding elements.
