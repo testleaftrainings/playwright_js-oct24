@@ -1,0 +1,60 @@
+Agenda:
+-----
+9.00AM to 9.45AM   -Understanding Playwright Architecture 
+9.45AM to 10.00AM  -Key Browser, Context, Page
+10.00AM to 10.40AM -First playwright code
+10.40AM to 11.00AM -Classroom
+11.00AM to 11.15AM -Break
+11.15AM to 12.15PM -understanding Dom &Basic Locators(CSS)
+12.15PM to 12.30PM -Classroom
+12.30PM to 1.00PM  -Basic xpath and Dropdown
+
+
+Websocket -->bidirectional 
+            -->both clent and server initialize the request/response
+
+Browser  --Instance of the browser to be launched
+Context -- browser window launched  using browser instance 
+Page  --tab opened through windoe(context)
+
+
+Each configuration under playwright.config.ts
+ -> test level
+ ->project level
+ ->global level
+
+to install playwright - npm init playwright
+to execute - npx playwright test filename
+to run in headed mode- npx playwright test launchBrowser.spec.ts --headed
+
+//fixture --> suports to launch the browser configured in the config file 
+  -chromium in default browser
+   -predefined code
+
+
+3 scope 
+
+test scope
+project scope
+global scope
+
+execution from Project folder -->reads the config file 
+ project[
+    3 different browser
+ ]
+ 
+   and 
+   configured with test spectic func
+    chromium.launch(chrome)
+
+
+[chromium] (1/3)
+[firefox] (2/3) //overide by configuring with chrome
+[webkit] (3/3)
+
+
+
+
+
+
+
