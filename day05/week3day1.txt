@@ -1,0 +1,140 @@
+Agenda:
+-----
+9.00AM  to 9.30AM  -Understanding DOM
+9.30AM  to 10.00AM -Basic Locators(CSS)(id,class)
+10.00AM to 10.15AM -Classroom
+10.15AM to 10.45AM -Advanced CSS
+10.45AM to 11.00AM -Break
+11.00AM to 11.50AM -Playwright locators/XPath
+11.50AM to 12.05PM -Classroom
+12.05PM to 12.40PM -Dropdown
+12.30PM to 12.45PM -Classroom
+12.45PM to 1.00PM  -QA/Recap
+
+to locate a place/ element -->address -->mode to travel-->bus/auto/metro/cab
+
+Understand the location of elements in the webpage-->DOM Page-design page/html page
+DOM ->Document Object model -->HTML for a webpage
+
+<>  ->tagname
+
+<html>-html tag  -->root element
+<head> -->represent the type of the element
+<body> -->complete content of the webpage
+<div>   -->section
+<span>  -->inner section
+<a>  --> the link in the page
+<button>
+  </button>
+<input></input>
+<form>
+<h2>
+</html>
+<tag  attributes /tag>
+id -->unique  preferable
+name
+class
+
+3 ways to locate the element using Playwright
+-------------------------------------------
+1.using CSS selector
+2.using playwright locators 
+3.Using XPath -->  xml path
+
+selector -->selecting/finding element in the webpage
+cascade style sheet -->html structure
+
+
+<input  id="username" name="USername" /input>
+
+All the attribute values are case sensitive
+
+CSS selector:
+------------
+
+1.using id attribute
+  a.syntax:  #idvalue
+    example:  #username
+  b.syntax: [id="value"]
+    example:[id="username"]
+  c.syntax: tagname[id="attValue"]
+    example: input[id="username]
+
+2.using class attribute
+   a. syntax:  .classAttvalue
+      example: .decorativeSubmit
+   b.syntax : [class="decorativeSubmit]
+   c.syntax: input[class="decorativeSubmit]
+    
+for other attributes
+  [attribute ='attributevalue']
+  tagname[attribute='attribute value']
+
+---------------------------------------------------
+3 .text based css
+ [text=textValue]
+ textValue -> black text in the dom
+[text=`${phoneName}`]
+
+playwright locators
+ ----------------
+ 6 types
+ 1.getByText()
+ 2.getByRole()-->role it possess 
+  a -->link role
+  role="button","checkbox"
+  button 
+3.getBytitle() -->attribute title="attribute value"
+4.getByplaceholder-->unique   placeholder ="value"
+5.getBytestId()
+6.getByalt -->getByAlt
+7.getBylabel-->to locate textbox associated with that label
+
+
+Exception
+1.timeout exceed  -->thrown -->wrong locator/ flaky test
+2.strict mode violation
+
+
+
+Using index -->avail the element if the count to maximum 5
+>5 -->not recommended
+
+actual dropdown --> <select> -->special method in pw (direct way) to pick the option
+selectOption()
+index
+label
+value -text value (black color text)
+
+non -select -->locate the ele -->normal click-->locate the option the click
+
+
+
+ setTimeout(function(){debugger;}, 2000)
+
+class= merit count 
+
+.merit count  ->relationship based css
+
+
+when not to use
+duplicated -->help of index
+value with whitespaces
+number -dynamic
+
+
+How to handle dynamic elements?
+ id value --.unique but has number -->changing
+ no right attribute
+ text -->multiple matches
+ index 
+
+
+ Advanced css /XPath
+ ------------------
+ relationship 
+   parent child
+   sibiling
+   cousin
+
+
