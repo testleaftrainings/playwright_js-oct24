@@ -1,0 +1,111 @@
+Agenda:(Saturday)
+------
+9.00AM to 9.45AM   -Enum ,Typescript Assertions
+9.45AM to 10.30AM  -Alert
+10.30AM to 10.45AM -Break 
+10.45AM to 11.30AM -Frame 
+11.30AM to 11.50AM -classroom 
+11.50PM to 12.50PM -Window handling
+1.05PM to 01.00PM  -Classroom
+
+Xpath
+
+locate the ele -->find attribute should unique -->id 
+               -->text -->stable -->label -->parent -child 
+                                          -->following - sibiling/cousin -->nth()
+              -->filter 
+
+Enum -->enumeration -->create a named constant
+    
+    countrynames-->
+
+const value=""
+
+Type assertion
+
+let credential:string="Demo" ==>type annotation -->explcitly infering the data
+
+let fname="Vidya"  //implicitly -->infers as string
+
+let address:any
+    -->string
+   -->number
+   -->boolean
+
+   await page.request.get(url,data,token)
+   response.json() :any
+    -->404, Error 
+    as string 
+
+    resonseStatus:string="404"    
+    resonseStatus is a  string  
+
+    two ways
+  1.using as keyword
+  2.using angular bracket <>
+----------
+Alert: some inform /message /pop up from the application
+ -->should be handled cannot be ignored
+ -->javascript function
+ -->can notbe inspectable
+ accept()  -->ok 
+ dismiss() -->cancel
+ message()-->to get the meassage of the alert
+ type() -->what type of alert it is?
+
+alert 
+ok
+ok/cancel
+input ok/cancel
+
+Types of alerts
+
+modal alert:
+ok - Simple Alert  -->only to accept
+ok/cancel -->confirmation alert -->desicion to be made on ok or Cancel
+input ok/cancel -->Prompt alert  -->type in the alert box as well as allowed to take decision 
+beforeunload -->leave/cancel
+
+non modal alert /sweet alert: 
+ -->it is inspectable 
+ -->cannot be ignorable
+
+
+ to confirm as an alert
+   -->shoudnot be inspectable -->modal alert 
+
+   -->it is inspectable and cannot be ignored -->non modal/sweet alert
+
+Selenium -->have to handle it -->switching to the alert
+playwright-->it auto dismiss it 
+
+
+locates the elemnent with class att as card --.7 matches 
+         filter-->using hasText-->confirm dialog
+          match ->1
+     -->click on the button
+
+//div[@class='card']/h5[text()=' Alert (Confirm Dialog)']
+
+locator("div.card").filter(hasText:" Alert (Confirm Dialog)")
+            has: page.locator("h5[text()=' Alert (Confirm Dialog)']")
+
+
+to handle the alert programmatically
+
+ -->event listener -->dialog
+ two ways
+   page.on()  -->on condition through out your code  (Multiple events)
+   page.once() -->on and closed(single)
+
+HtML 5 -->frame set
+
+   Frame: -->DOM inside a DOM 
+    one application into another application
+
+    inline frame --><iframe>  -->HTML inside HTML document
+
+    to locate any element in the frame 
+      
+      frameObject
+      frameLocator
