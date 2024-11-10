@@ -1,0 +1,46 @@
+
+Remaining Frames
+     page.frames()
+     frame index
+     frame object
+     frameLocator -suggested
+  
+Window handling:
+    -->handling muliple tabs/ windows happened by an action on any page
+
+sequential approach -->single window is opened
+concurrent approach  -->multiple window opened at one time
+
+1. event listener
+
+  create a promise the listener 
+  click an element
+   await -->resolved
+
+
+2.Promise.all
+
+const [newWindow1, newWindow2, newWindow3] = await Promise.all([
+    Waiting for page1
+    click the button
+    Waiting for page2
+    Click the button
+    Waiting for page3
+    Click the button
+])
+result Promise[2] = [Promise1, Promise2, Promise3]
+
+
+
+
+
+
+
+
+
+Upload
+Download
+csv -->comma separated value
+json -->
+
+.env
