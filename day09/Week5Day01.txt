@@ -1,0 +1,88 @@
+Agenda:
+------
+9.00AM  to 9.40 AM  - Data Parametrization-csv/json
+9.40AM to 10.00 AM  - Classroom  
+10.00AM to 10.30 AM - Data Parametrization-env file
+10.30AM to 10.45 AM - classroom 
+10.45AM to 11.00 AM - Break
+11.00AM to 11.30 PM - Skip Login/ storage state
+11.30PM to 12.00 PM - PersistentContext -->normal mode
+12.00PM to 12.15PM  - classroom
+12.15PM to 1.00PM   -Playwright Config
+
+
+Parametrization:
+----------------
+url
+Credentials- UI Login,DB, API 
+Demographic info
+Multiple parameters ->Employee -address, contact, income details
+xpath list
+environments- prod,UAT,QA,Staging
+
+utility
+----- 
+  -file formats
+    csv
+    json
+    .env
+    excel 
+
+csv -->comma separated file
+   -->.csv
+ install -->csv-parse -->npm install csv-parse
+
+testCaseID,username,password,email
+tc01,vidyar@testleaf.com,Sales@123,vidyar@gmail.com
+
+await frameEle.locator("//select[@class='']").selectOption({label:'500MB'})
+
+const ddOptions=frameEle.locator("//select[@class='']/option")
+for(let i=0;i<=ddOptions;i++){
+   1.  if(ddOptions[i].innerText()=='500MB')
+      {
+        ddOptions[i].click()
+      }
+
+ 2. if(i==2){
+   await ddOptions[i].click()
+ }
+
+ 3 for(let opt of ddOption){
+  await  opt.Click()
+ }
+
+}
+
+
+let firstname:string
+test(){
+Creating the lead -->firstname
+
+firstname=locator().innerText()
+}
+
+test(){
+Edit -->findLeads -->firstname
+locator(findLeads).fill(firstname)
+}
+
+
+json -->
+ file created as .json
+ 
+ Read data from env 
+
+ env file -->env variable -->
+  -->use to store the sensitive data -->credentials -->db, endpoints,environment specific data
+
+ -->npm install dotenv
+ dotenv.config(path)
+
+ dynamic file to be attached
+ envFile=process.env.envDataFile 
+
+ $env:envDataFile="Prod"
+ npx playwright test 
+
+ npm run 
