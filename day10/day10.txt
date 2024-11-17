@@ -1,0 +1,61 @@
+Agenda:
+-------
+8.45AM  to 9.10AM  -Recap
+9.10AM  to 10.10AM -Session Storage and Persistent Context
+10.10AM to 10.25AM -classroom
+10.25AM to 10.40AM -Break
+10.40AM to 11.45AM -Serial, Sequential and Parallel Execution,Hooks
+11.45AM to 12.00AM -classroom 
+12.00AM to 12.40AM - Codegen and commandline arguments
+12.40PM to 1.00PM  - Trace viewer/Screenshot
+
+npm install run-all --save-dev
+
+npm run test:prod
+
+under package.json
+"scripts": {
+    "test:prod": "npx playwright test readEnvFile.spec.ts --config=playwright.prod.config.ts",
+    "test:testing": "npx playwright test --config=playwright.staging.config.ts",
+    "test:all": "npm run test:prod npm run test:testing"
+  },
+
+  -->tags-categorize the test
+     test(``,{tag:['Login','regression']})
+     test(``,{tag:['Login']})
+       test(``,{tag:['regression','Login']})
+     npx playwright test -g 'Login | regression'  -->either or
+     npx playwright test -g 'Login.*regression|regression.*Login'  -->and
+
+
+  ->grep -->global reg expression
+
+test annotation-->execute the scripts in different ways 
+      
+test.only -->execute only the particular test
+test.skip -->it skip test from execution
+test.fail-> 
+test.fixme -->to inform the dev/team about the fix to be done to theat module
+test.slow -->slows down the exection for each action -->3x
+
+Hirearchy
+test.beforeAll -->executes only one time(pre)
+test.beforeEach -->executes for each test
+   test()
+   test()
+test.afterEach -->executes for each test(post)
+test.afterAll-->executes after all the test(one time)
+
+storageState-> stores the session details ->cookies 
+
+test.describe ->group the testcases -->Sequential,serial,parallel
+
+sequential -one after the other
+serial-->to inject the dependency -->the execution of the one test depends on the status of the other test
+
+
+
+
+
+
+
