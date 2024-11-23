@@ -1,0 +1,200 @@
+Agenda:
+--------
+9.00AM to 9.15AM   - Recap
+9.15AM to 10.30AM  - API Introduction
+10.15AM to 11.15AM - Headers 
+11.15AM to 11.30AM - Break 
+11.30AM to 12.00PM - API with Postman (CURD operation)
+12.00PM to 12.20PM - Classroom
+12.20PM to 12.50PM - Global Variables
+12.50PM to 1.00PM  - Classroom
+
+
+API -->Application programming interface
+       -->request and response
+       Soap UI
+       REST API
+       GraphQL
+       gRPC 
+
+
+
+endpoint url -->domain/resource
+
+
+ https://dev216320.service-now.com/api/now/table/incident/1c741bd70b2322007518478d83673af3
+
+CRUD Operation -->Create, Read, Update, Delete
+
+HTTP Headers -request method
+POST -->use to create the resource
+Get-->to retereive all the resources with respect to the endpoint
+Delete -->delete the record
+Patch -->partial update 
+Put-->update the record /replace complete record 
+         -->specific record not available , it creates new record
+
+
+paramas
+
+ path parameter -->which resource
+ query parameter->filter the specific resource
+
+
+Authentication-->verifies the user identity
+ No Authentication
+ OAuth
+ Basic Authentication
+ JWT
+ API KEY
+
+
+Authorization -->permission provided to the user
+
+uri -->universal resource identifier
+      url and urn
+      universal resource locator -->https://www.google.com
+      universal resource name -->domain
+
+data/payload
+  body of data -->
+
+status codes
+1xx -->information
+2xx-->success message
+   200 -->sucess 
+   201 -->post -->success
+   204 -->delete -->No Content
+3xx--->Redirectional
+4xx-->client
+  400 -->Bad request
+  401-->unauthorized
+  403 -->forbidden
+  404 -->Not found -->resource is not available
+  409 -->conflict
+5xx -->server
+  500-->Internal server error
+  501-->req is not avialble -->req is not implemented 
+  502  -->Bad gateway
+  503 -->service unavailable
+  505 -->gateway timeout
+  
+Steps to do CRUD operation with Servicenow
+
+Post: Create new resource
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Endpoint url :https://dev216320.service-now.com/api/now/table/incident
+Authorization
+     admin  UY2mOUe^7p@f
+Body : 
+{
+    "description":""
+}
+Response -201 ok ->created 
+-----------------------------------------------------------------------
+Get:  All incident
+Endpoint url :https://dev216320.service-now.com/api/now/table/incident
+Authorization
+     admin  UY2mOUe^7p@f
+
+Response -200 ok ->created 
+--------------------------------------------------------------------
+Get:  Specific incident
+~~~~~~~~~~~~~~~~~~~~~~~
+Endpoint url :https://dev216320.service-now.com/api/now/table/incident/sys_id
+Authorization
+     admin  UY2mOUe^7p@f
+
+Response -200 ok  
+------------------------------------------------------------
+
+Patch:  specific incident
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Endpoint url :https://dev216320.service-now.com/api/now/table/incident/sys_id
+Authorization
+     admin  UY2mOUe^7p@f
+Body : 
+{
+    "short_description":""
+    "location":"India"
+}
+
+Response -200 ok  
+--------------------------------------------------------------------
+
+Delete:  specific incident
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Endpoint url :https://dev216320.service-now.com/api/now/table/incident/sys_id
+Authorization
+     admin  UY2mOUe^7p@f
+
+Response -204 No content  
+-----------------------------------------------------------------
+
+SalesForce 
+   Step:1 -->Generate OAuth token
+   Endpoint-->https://login.salesforce.com/services/oauth2/token 
+   Body
+    grant_type
+    client_id
+    client_secret
+    username
+    password
+
+    Response -->200 ok  -->response data with acesstoken,instance url
+    -------------------------------------------------
+To Create Lead resource
+~~~~~~~~~~~~~~~~~~~~~~~~
+Post
+ Endpoint : https://testleaf-da-dev-ed.develop.my.salesforce.com/services/data/v62.0/sobjects/Lead
+ Authorization :access_token -->Bearer token
+                content_type :application/json
+ Body :{
+    "Lastname":"",
+    "company":""
+ }
+-------------------------------------------------
+GET
+ Endpoint : https://testleaf-da-dev-ed.develop.my.salesforce.com/services/data/v62.0/sobjects/Lead/id
+ Authorization :access_token -->Bearer token
+                content_type :application/json
+ No Body Content
+ -------------------------------------
+Patch
+ Endpoint : https://testleaf-da-dev-ed.develop.my.salesforce.com/services/data/v62.0/sobjects/Lead/id
+ Authorization :access_token -->Bearer token
+                content_type :application/json
+ Body :{
+    "firstname":"",
+   "salutation":"Mrs"
+ }
+ ----------------------------------------------
+Delete 
+ Endpoint : https://testleaf-da-dev-ed.develop.my.salesforce.com/services/data/v62.0/sobjects/Lead/id
+ Authorization :access_token -->Bearer token
+                content_type :application/json
+No Body Content
+
+Salesforce Endpoints
+-------------------
+
+https://testleaf-da-dev-ed.develop.my.salesforce.com/services/data/v62.0/sobjects/Lead
+
+https://testleaf-da-dev-ed.develop.my.salesforce.com/services/data/v62.0/sobjects/Account
+
+https://testleaf-da-dev-ed.develop.my.salesforce.com/services/data/v62.0/sobjects/Opportunity
+
+Post -->to get all resources 
+https://testleaf-da-dev-ed.develop.my.salesforce.com/services/data/v62.0/sobjects
+
+add under script:
+----------------
+const response = pm.response.json();
+const sobjectUrls = response.sobjects.map(obj => obj.urls.sobject);
+console.log(sobjectUrls);
+
+
+in the postman console , all the endpoints will be  retereived.
+

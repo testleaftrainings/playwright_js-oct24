@@ -1,0 +1,661 @@
+{
+	"info": {
+		"_postman_id": "a3e25330-3770-402e-8dd0-4c71ebe52b9b",
+		"name": "API_OCT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23239426"
+	},
+	"item": [
+		{
+			"name": "SalesForce",
+			"item": [
+				{
+					"name": "Generate OAuth token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "3MVG95mg0lk4bathv4oYb772GRC3bVxW1Es_Q3iIRRNR8SK5ApA.LJbPT96HpWJInRGniHTbF.cUq2.uJatoV",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "149569A62384820C94E7FCB265BEFEC659DE02AD4E4D4BAEE95A354329BCD654",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "vidyar@testleaf.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Sales@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://login.salesforce.com/services/oauth2/token",
+							"protocol": "https",
+							"host": [
+								"login",
+								"salesforce",
+								"com"
+							],
+							"path": [
+								"services",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create Lead",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var resp=pm.response.json()\r",
+									"var leadId = resp.id\r",
+									"pm.globals.set(\"LeadID\", leadId);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "00D5h0000098pgR!AQwAQPL5PQfWm5e05CLStT_E5jxLYw1E4JVwo7TsJOqZhJoyMicVQDVhLdXlEulwLskvw0g9ifdqC5gqeCYrsjHlxqc7jvcH",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 00D5h0000098pgR!AQwAQPL5PQfWm5e05CLStT_E5jxLYw1E4JVwo7TsJOqZhJoyMicVQDVhLdXlEulwLskvw0g9ifdqC5gqeCYrsjHlxqc7jvcH",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n     \"lastname\":\"R\",\r\n     \"company\":\"Testleaf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://testleaf-da-dev-ed.develop.my.salesforce.com/services/data/v62.0/sobjects/Lead",
+							"protocol": "https",
+							"host": [
+								"testleaf-da-dev-ed",
+								"develop",
+								"my",
+								"salesforce",
+								"com"
+							],
+							"path": [
+								"services",
+								"data",
+								"v62.0",
+								"sobjects",
+								"Lead"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "specificLeadRecord",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "00D5h0000098pgR!AQwAQPL5PQfWm5e05CLStT_E5jxLYw1E4JVwo7TsJOqZhJoyMicVQDVhLdXlEulwLskvw0g9ifdqC5gqeCYrsjHlxqc7jvcH",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://testleaf-da-dev-ed.develop.my.salesforce.com/services/data/v62.0/sobjects/Lead/{{LeadID}}",
+							"protocol": "https",
+							"host": [
+								"testleaf-da-dev-ed",
+								"develop",
+								"my",
+								"salesforce",
+								"com"
+							],
+							"path": [
+								"services",
+								"data",
+								"v62.0",
+								"sobjects",
+								"Lead",
+								"{{LeadID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "00D5h0000098pgR!AQwAQPL5PQfWm5e05CLStT_E5jxLYw1E4JVwo7TsJOqZhJoyMicVQDVhLdXlEulwLskvw0g9ifdqC5gqeCYrsjHlxqc7jvcH",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\":\"Vidya\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://testleaf-da-dev-ed.develop.my.salesforce.com/services/data/v62.0/sobjects/Lead/{{LeadID}}",
+							"protocol": "https",
+							"host": [
+								"testleaf-da-dev-ed",
+								"develop",
+								"my",
+								"salesforce",
+								"com"
+							],
+							"path": [
+								"services",
+								"data",
+								"v62.0",
+								"sobjects",
+								"Lead",
+								"{{LeadID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete lead",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Replace",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "00D5h0000098pgR!AQwAQPL5PQfWm5e05CLStT_E5jxLYw1E4JVwo7TsJOqZhJoyMicVQDVhLdXlEulwLskvw0g9ifdqC5gqeCYrsjHlxqc7jvcH",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lastname\":\"Deepak\",\r\n    \"Company\":\"Wipro\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://testleaf-da-dev-ed.develop.my.salesforce.com/services/data/v62.0/sobjects/Lead/{{LeadID}}",
+							"protocol": "https",
+							"host": [
+								"testleaf-da-dev-ed",
+								"develop",
+								"my",
+								"salesforce",
+								"com"
+							],
+							"path": [
+								"services",
+								"data",
+								"v62.0",
+								"sobjects",
+								"Lead",
+								"{{LeadID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Endpoints",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Parse the response body\r",
+									"const response = pm.response.json();\r",
+									"\r",
+									"// Initialize an array to store the URLs\r",
+									"const sobjectUrls = response.sobjects.map(obj => obj.urls.sobject);\r",
+									"\r",
+									"// Log the URLs to the console\r",
+									"console.log(sobjectUrls);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "00D5h0000098pgR!AQwAQPL5PQfWm5e05CLStT_E5jxLYw1E4JVwo7TsJOqZhJoyMicVQDVhLdXlEulwLskvw0g9ifdqC5gqeCYrsjHlxqc7jvcH",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://testleaf-da-dev-ed.develop.my.salesforce.com/services/data/v62.0/sobjects",
+							"protocol": "https",
+							"host": [
+								"testleaf-da-dev-ed",
+								"develop",
+								"my",
+								"salesforce",
+								"com"
+							],
+							"path": [
+								"services",
+								"data",
+								"v62.0",
+								"sobjects"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Servicenow",
+			"item": [
+				{
+					"name": "create Incident",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "UY2mOUe^7p@f",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"short_description\":\"creating incident through postman \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev216320.service-now.com/api/now/table/incident",
+							"protocol": "https",
+							"host": [
+								"dev216320",
+								"service-now",
+								"com"
+							],
+							"path": [
+								"api",
+								"now",
+								"table",
+								"incident"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All created incidents",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "UY2mOUe^7p@f",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dev216320.service-now.com/api/now/table/incident",
+							"protocol": "https",
+							"host": [
+								"dev216320",
+								"service-now",
+								"com"
+							],
+							"path": [
+								"api",
+								"now",
+								"table",
+								"incident"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "specificincident",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "UY2mOUe^7p@f",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev216320.service-now.com/api/now/table/incident/ef3074e1530a5210a09cf301a0490e6a",
+							"protocol": "https",
+							"host": [
+								"dev216320",
+								"service-now",
+								"com"
+							],
+							"path": [
+								"api",
+								"now",
+								"table",
+								"incident",
+								"ef3074e1530a5210a09cf301a0490e6a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update the incident with worknotes",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "UY2mOUe^7p@f",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"work_notes\":\"Learning api through postman\",\r\n    \"description\":\"Learning API\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev216320.service-now.com/api/now/table/incident/ef3074e1530a5210a09cf301a0490e6a",
+							"protocol": "https",
+							"host": [
+								"dev216320",
+								"service-now",
+								"com"
+							],
+							"path": [
+								"api",
+								"now",
+								"table",
+								"incident",
+								"ef3074e1530a5210a09cf301a0490e6a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete the record",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "UY2mOUe^7p@f",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://dev216320.service-now.com/api/now/table/incident/ef3074e1530a5210a09cf301a0490e6a",
+							"protocol": "https",
+							"host": [
+								"dev216320",
+								"service-now",
+								"com"
+							],
+							"path": [
+								"api",
+								"now",
+								"table",
+								"incident",
+								"ef3074e1530a5210a09cf301a0490e6a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "admin",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "password",
+			"value": "UY2mOUe^7p@f",
+			"type": "string"
+		}
+	]
+}
