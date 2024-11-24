@@ -1,0 +1,63 @@
+Agenda:
+--------
+9.00AM to 9.15AM   - Recap
+9.15AM to 10.15AM  - API Integration with Playwright(Post and Get)
+10.45AM to 11.05PM - Classroom
+11.05AM to 11.20AM - Break 
+11.20AM to 12.15PM - End to End Scenario
+12.15PM to 12.35PM - Classroom
+12.35PM to 1.00PM  - Custom fixture and Persistent context
+
+Requirements
+-----------
+Endpoint
+Payload -->Body 
+Headers ->content_type, authorization
+Request methods
+Response code -->assert
+
+browser-->browserType.launch 
+context=browser.newContext()-->window
+window.newPage()
+
+
+context:BrowserContext
+page:Page
+
+API integration
+APIRequestContext -associated with the newContext()
+
+const browser=await chromium.launch()
+const context=await browser.newContext()
+cont request= context.request;
+
+{request} ->request fixture
+
+post
+get
+patch 
+delete
+
+const response =await request.post(endpoint,{headers,data})
+
+ SyntaxError: Unexpected end of JSON input -->no response body is evident with request
+
+salesforce
+ generate token
+   endpoint -->post
+   headers -->content type,connection
+   body--> formdata-->granttype, clientId, ClientSecret, username and password
+ 
+ response.access_token
+
+token -->authorize the request -post, get,patch and delete
+to generate random data install - npm install @faker-js/faker
+
+
+
+
+
+
+
+
+
