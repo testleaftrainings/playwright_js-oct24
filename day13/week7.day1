@@ -1,0 +1,61 @@
+Agenda:day 13
+------
+Custom Fixture and Persistent Context
+CodeGen
+Break
+OOPs-Class,Constructor,Object
+Classroom
+Inheritance
+Classroom
+
+
+Custom fixture -
+->create predefined / base architecture/ base functionality applicable acreoss the spec files
+
+
+
+test(``,async({page})=>{ 
+page.goto()
+})
+
+import 
+
+test =basetest.extend({page:async({}))})
+
+Persistent context-->to open the app in a normal browser
+
+codegen -->generator the code in aspecifc path and play back it
+run the command 
+npx playwright codegen http://leaftaps.com/opentaps/control/main -o codegen.spec.ts
+
+OOPs
+-----
+ Object oriented programming 
+  Modularity
+  Resuability
+  Easily maintainable and scalable
+
+
+  Inheritance
+  Polymorphism
+  Abstraction 
+  Encapsulation
+
+  Class ->blueprint/design with respect to Object
+
+    -->properties and method
+    -->properties -->information/data about the Object
+    -->method -->action
+
+  Object -->reference to the class
+
+  class classname{
+    method1(){
+
+    }
+
+  }
+
+   function fnName(){
+
+   }
