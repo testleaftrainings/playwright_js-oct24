@@ -1,0 +1,99 @@
+day :14
+-------
+Inheritance
+Accessmodifier -public, protected ,private,readonly
+abstraction-abstract class and interface
+break 
+classroom 
+page object model
+creating pages and test() 
+classroom
+
+Inheritance :
+-----------
+ acquring the property of parent by child
+ build the relationship between two same type classes
+ IS-A realtionship 
+ redundancy od methods -->no need to duplicate the methods
+
+keyword extends
+
+type 
+single Inheritance
+multilevel inheritance 
+ userReq extends Amazon
+     Transaction extends userReq 
+
+
+Multiple inheritance is not possible
+
+Accessmodifier ->permission to use the methods/ property of the class
+
+public -->accessible in all the classes
+private-->accessible only within a class
+  make visible to other classes -->set the perimission -->get set method
+protected -->accessible by the extended family(classes-subclasses)
+
+
+Ensapsulation ->binding the class properties and method together 
+get and set method to provide accessbility on private variable
+
+readonly-> like final and const variable -->cannot change the value of it 
+static
+
+
+
+Abstaction ->hiding the internal details and showing the required information
+ -->designing the framework
+
+abstact class  -->0 to 100% -Partial abstraction
+interface -->100 % -Full abstraction
+
+implementaion details 
+
+
+Relationship between the classes 
+-----------------------------
+class extends another class
+abstract class extends another abstract class
+class extends abstract class
+class implements interface 
+abstract class implements interface
+class extends abstract class implements interface
+
+
+
+
+day:15
+------
+Parametrizing POM -30 mins
+Retry Logic- 40 mins
+Custom report,tracing,screenshot- 30mins
+Break
+jira integration with pw  -40 mins 
+Framework walkthrough -1hr
+
+day:16
+------
+Framework Implemntation and doubts clarification -1 hr
+Network interception -40 mins
+Geolocaion and Device Emulation -40 mins
+Visual testing -20 mins
+github actions -20 mins  ci/cd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://forms.office.com/r/ZhhkNTVh1C
