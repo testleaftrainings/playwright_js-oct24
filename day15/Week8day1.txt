@@ -1,0 +1,100 @@
+Agenda:
+-------
+POM -Refactoring 
+Retry Logic
+Break
+classroom
+jira integration with pw  
+Custom report,tracing,screenshot
+Framework walkthrough 
+
+
+OOPs
+-----
+ Inheritance
+ Abstraciton
+ Encapsulation
+ Polymorphism  --> many  forms
+      Overloading  -->a method of class can have different arguments but carrying same name
+               same class, same methodname with different arguments
+ 
+  async function browserType(browserName:string);
+  async function browserType(browserName:string,headless:boolean)
+
+      Overriridng-->providing different implementation to the existing method -->can be used with inheritance
+ 
+this -->representing the current class method/property
+super -->represent the parent class methods/property
+
+
+POM -->Design pattern
+Separating pages -->methods /element behaviour /action in one file and calling it with other file
+
+CreateLeadPage
+  fname 
+  lname
+  cname
+
+
+submitResource(){
+  submit("locator")
+}
+
+Create Lead -->submit
+Create Account-->submit
+fname
+lname
+cname
+acc subit -->clp.submitResource()
+
+
+Leads Module
+
+LoginPAge -->CRMPAGE-->HOMEPAGE-->LEADSPAGE-->CREATELEAD-->VIEWLEAD
+
+
+Accounts Module
+
+HomePAGE -->AccountPage
+
+Classroom:
+
+Create a folder and add to the workspace
+install playwright ->npm init playwright@latest
+create folders - Page,util,data,customFixtures
+Under util -->create a file  as playwrightutil.ts
+under page -->create loginpage.ts and homepage.ts
+under data -> create a constant.ts and login.json
+under customfixtures-> create a file as myFixture.ts
+
+i) In Plawrightutil.ts create an abstract class as PlaywrightWrapper
+   Step:1 declare page and context as property
+   step:2 initialize with constructor
+   step:3 Create sample wrapper methpd for type() to fill in the textbox, click() for click function use try and catch block
+
+
+ii) In loginPage.ts create a class as LoginPage which should extend PlaywrightWrapper
+
+    Step:1 call super() iniitalize the page and context 
+    step:2 create property for each element selectors
+    step:3 create methods for element actions 
+               navigate(), enterCredentials(), clickLogin()
+           Hint:use json data to read the data into the credentials 
+
+iii)In homePage.ts create a class as HomePage ane extend the LoginPage class
+      -Add methods related to the page
+
+
+iv)Under myFixture.ts
+   Add the type SalesForce{
+    sflogin:LoginPage
+    sfHome:HomePage
+   }
+    create object for the page classes to implement the fixture in test()
+
+v) Create a spec.ts file under tests folder 
+   use test from the fixture and add the page fixture to call the methods for execution 
+
+
+
+   retry logic,jira integration,Network interception, geolocation,deviceEmulation,custom report,CICD- Github actions
